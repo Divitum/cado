@@ -1,0 +1,8 @@
+{
+  "name": "cado",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular",
+  "id": "30b52ed0"
+}
