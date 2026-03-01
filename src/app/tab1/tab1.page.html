@@ -1,17 +1,79 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Tab 1
-    </ion-title>
+    <ion-title>Expenses</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
+      <ion-title size="large">Expenses</ion-title>
+      <ion-buttons slot="end">
+        <ion-segment [(ngModel)]="periodView" (ionChange)="onPeriodViewChange()">
+          <ion-segment-button value="monthly">
+            <ion-label>Month</ion-label>
+          </ion-segment-button>
+          <ion-segment-button value="weekly">
+            <ion-label>Week</ion-label>
+          </ion-segment-button>
+        </ion-segment>
+      </ion-buttons>
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+  <ion-list *ngIf="expenseGroups.length > 0">
+    <ion-item-group *ngFor="let group of expenseGroups">
+      <ion-item-divider>
+        <ion-label>{{ group.category.name }}</ion-label>
+      </ion-item-divider>
+      <ion-item-sliding *ngFor="let expense of group.expenses">
+        <ion-item>
+          <ion-label>
+            <h2>{{ expense.name }}</h2>
+            <div class="expense-row">
+              <ion-input
+                *ngIf="expense.type === 'recurring'"
+                type="number"
+                [ngModel]="getDisplayAmount(expense)"
+                (ngModelChange)="onAmountChange(expense, $event)"
+                class="amount-input"
+              ></ion-input>
+              <ion-badge [color]="expense.period === 'monthly' ? 'primary' : 'secondary'">
+                {{ expense.period === 'monthly' ? 'M' : 'W' }}
+              </ion-badge>
+            </div>
+          </ion-label>
+          <div slot="end" class="expense-end">
+            <ng-container *ngIf="expense.type === 'recurring'">
+              <ion-icon
+                [name]="expense.isPaid ? 'checkmark-circle' : 'checkmark-circle-outline'"
+                [color]="expense.isPaid ? 'success' : 'medium'"
+                (click)="togglePaid(expense)"
+                class="checkmark-icon"
+              ></ion-icon>
+            </ng-container>
+            <ng-container *ngIf="expense.type === 'realtime'">
+              <span class="realtime-amount">{{ formatAmount(expense.currentAmount) }} / {{ formatAmount(expense.goalAmount) }}</span>
+              <ion-button fill="clear" size="small" (click)="openAddTransaction(expense)">
+                <ion-icon name="add" slot="icon-only"></ion-icon>
+              </ion-button>
+            </ng-container>
+          </div>
+        </ion-item>
+        <ion-item-options side="end">
+          <ion-item-option color="danger" (click)="deleteExpense(expense)">Delete</ion-item-option>
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-item-group>
+  </ion-list>
+
+  <div *ngIf="expenseGroups.length === 0" class="empty-state">
+    <p>No expenses yet. Tap the + button to add one.</p>
+  </div>
+
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+    <ion-fab-button (click)="openAddExpense()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>

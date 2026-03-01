@@ -1,0 +1,52 @@
+.expense-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.amount-input {
+  max-width: 100px;
+  --padding-start: 8px;
+  --padding-end: 8px;
+}
+
+.amount-text {
+  font-size: 0.9em;
+  opacity: 0.9;
+}
+
+.expense-end {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.checkmark-icon {
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.realtime-amount {
+  font-size: 0.9em;
+  white-space: nowrap;
+}
+
+.empty-state {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+  padding: 24px;
+  text-align: center;
+  color: var(--ion-color-medium);
+}
+
+ion-segment {
+  --background: var(--ion-color-step-100);
+}
+
+ion-segment-button {
+  --indicator-color: var(--ion-color-primary);
+  min-height: 32px;
+}
