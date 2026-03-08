@@ -1,19 +1,127 @@
+.sleek-content {
+  --background: var(--ion-background-color);
+  --padding-bottom: 100px;
+}
+
+.period-segment {
+  --background: rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  padding: 4px;
+}
+
+.expense-groups {
+  padding: 16px;
+  padding-bottom: 24px;
+}
+
+.category-card {
+  margin: 0 0 20px 0;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+
+  ion-card-header {
+    padding: 16px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .category-header {
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 4px;
+      height: 20px;
+      border-radius: 2px;
+      background: var(--category-color, var(--ion-color-primary));
+    }
+  }
+
+  .category-content {
+    padding: 0;
+  }
+
+  ion-card-title {
+    font-size: 1rem;
+    font-weight: 600;
+    padding-left: 12px;
+    color: var(--ion-text-color);
+  }
+}
+
+.expense-item-wrapper {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.expense-item {
+  --background: transparent;
+  --padding-start: 20px;
+  --padding-end: 16px;
+  --inner-padding-end: 0;
+  min-height: 64px;
+
+  ion-item-sliding {
+    width: 100%;
+  }
+}
+
+.expense-label {
+  h2 {
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 4px;
+  }
+}
+
+.expense-name {
+  font-weight: 500;
+  color: var(--ion-text-color);
+}
+
 .expense-row {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   margin-top: 4px;
 }
 
 .amount-input {
-  max-width: 100px;
-  --padding-start: 8px;
-  --padding-end: 8px;
+  max-width: 110px;
+  --background: rgba(255, 255, 255, 0.06);
+  --padding-start: 12px;
+  --padding-end: 12px;
+  --border-radius: 10px;
+  font-weight: 500;
 }
 
-.amount-text {
-  font-size: 0.9em;
-  opacity: 0.9;
+.period-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 28px;
+  height: 22px;
+  padding: 0 8px;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  font-weight: 600;
+
+  &.monthly {
+    background: rgba(91, 156, 245, 0.2);
+    color: var(--ion-color-primary);
+  }
+
+  &.weekly {
+    background: rgba(124, 138, 255, 0.2);
+    color: var(--ion-color-secondary);
+  }
 }
 
 .expense-end {
@@ -25,28 +133,69 @@
 .checkmark-icon {
   font-size: 28px;
   cursor: pointer;
+  transition: transform 0.2s ease;
+
+  &:active {
+    transform: scale(0.95);
+  }
 }
 
 .realtime-amount {
-  font-size: 0.9em;
+  font-size: 0.9rem;
+  font-weight: 500;
   white-space: nowrap;
+  color: var(--ion-text-color);
+}
+
+.add-transaction-btn {
+  --padding-start: 8px;
+  --padding-end: 8px;
+  margin: 0;
 }
 
 .empty-state {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 200px;
+  min-height: 280px;
   padding: 24px;
+}
+
+.empty-state-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 32px;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 20px;
+  border: 1px dashed rgba(255, 255, 255, 0.1);
   text-align: center;
+  max-width: 280px;
+}
+
+.empty-icon {
+  font-size: 64px;
   color: var(--ion-color-medium);
+  opacity: 0.5;
+  margin-bottom: 20px;
 }
 
-ion-segment {
-  --background: var(--ion-color-step-100);
+.empty-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--ion-text-color);
+  margin: 0 0 8px 0;
 }
 
-ion-segment-button {
-  --indicator-color: var(--ion-color-primary);
-  min-height: 32px;
+.empty-subtitle {
+  font-size: 0.9rem;
+  color: var(--ion-color-medium);
+  margin: 0;
+  line-height: 1.4;
+}
+
+.sleek-fab {
+  ion-fab-button {
+    --box-shadow: 0 6px 24px rgba(91, 156, 245, 0.45);
+  }
 }

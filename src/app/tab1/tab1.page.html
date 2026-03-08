@@ -1,15 +1,15 @@
-<ion-header [translucent]="true">
+<ion-header [translucent]="true" class="sleek-header">
   <ion-toolbar>
     <ion-title>Expenses</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" class="sleek-content">
   <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">Expenses</ion-title>
       <ion-buttons slot="end">
-        <ion-segment [(ngModel)]="periodView" (ionChange)="onPeriodViewChange()">
+        <ion-segment [(ngModel)]="periodView" (ionChange)="onPeriodViewChange()" class="period-segment">
           <ion-segment-button value="monthly">
             <ion-label>Month</ion-label>
           </ion-segment-button>
@@ -21,57 +21,65 @@
     </ion-toolbar>
   </ion-header>
 
-  <ion-list *ngIf="expenseGroups.length > 0">
-    <ion-item-group *ngFor="let group of expenseGroups">
-      <ion-item-divider>
-        <ion-label>{{ group.category.name }}</ion-label>
-      </ion-item-divider>
-      <ion-item-sliding *ngFor="let expense of group.expenses">
-        <ion-item>
-          <ion-label>
-            <h2>{{ expense.name }}</h2>
-            <div class="expense-row">
-              <ion-input
-                *ngIf="expense.type === 'recurring'"
-                type="number"
-                [ngModel]="getDisplayAmount(expense)"
-                (ngModelChange)="onAmountChange(expense, $event)"
-                class="amount-input"
-              ></ion-input>
-              <ion-badge [color]="expense.period === 'monthly' ? 'primary' : 'secondary'">
-                {{ expense.period === 'monthly' ? 'M' : 'W' }}
-              </ion-badge>
-            </div>
-          </ion-label>
-          <div slot="end" class="expense-end">
-            <ng-container *ngIf="expense.type === 'recurring'">
-              <ion-icon
-                [name]="expense.isPaid ? 'checkmark-circle' : 'checkmark-circle-outline'"
-                [color]="expense.isPaid ? 'success' : 'medium'"
-                (click)="togglePaid(expense)"
-                class="checkmark-icon"
-              ></ion-icon>
-            </ng-container>
-            <ng-container *ngIf="expense.type === 'realtime'">
-              <span class="realtime-amount">{{ formatAmount(expense.currentAmount) }} / {{ formatAmount(expense.goalAmount) }}</span>
-              <ion-button fill="clear" size="small" (click)="openAddTransaction(expense)">
-                <ion-icon name="add" slot="icon-only"></ion-icon>
-              </ion-button>
-            </ng-container>
-          </div>
-        </ion-item>
-        <ion-item-options side="end">
-          <ion-item-option color="danger" (click)="deleteExpense(expense)">Delete</ion-item-option>
-        </ion-item-options>
-      </ion-item-sliding>
-    </ion-item-group>
-  </ion-list>
-
-  <div *ngIf="expenseGroups.length === 0" class="empty-state">
-    <p>No expenses yet. Tap the + button to add one.</p>
+  <div class="expense-groups" *ngIf="expenseGroups.length > 0">
+    <ion-card *ngFor="let group of expenseGroups" class="category-card">
+      <ion-card-header class="category-header" [style.--category-color]="group.category.color || '#5b9cf5'">
+        <ion-card-title>{{ group.category.name }}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content class="category-content">
+        <div *ngFor="let expense of group.expenses" class="expense-item-wrapper">
+          <ion-item-sliding>
+            <ion-item class="expense-item" lines="none">
+              <ion-label class="expense-label">
+                <h2 class="expense-name">{{ expense.name }}</h2>
+                <div class="expense-row">
+                  <ion-input
+                    *ngIf="expense.type === 'recurring'"
+                    type="number"
+                    [ngModel]="getDisplayAmount(expense)"
+                    (ngModelChange)="onAmountChange(expense, $event)"
+                    class="amount-input"
+                  ></ion-input>
+                  <span class="period-badge" [class.monthly]="expense.period === 'monthly'" [class.weekly]="expense.period === 'weekly'">
+                    {{ expense.period === 'monthly' ? 'M' : 'W' }}
+                  </span>
+                </div>
+              </ion-label>
+              <div slot="end" class="expense-end">
+                <ng-container *ngIf="expense.type === 'recurring'">
+                  <ion-icon
+                    [name]="expense.isPaid ? 'checkmark-circle' : 'checkmark-circle-outline'"
+                    [color]="expense.isPaid ? 'success' : 'medium'"
+                    (click)="togglePaid(expense)"
+                    class="checkmark-icon"
+                  ></ion-icon>
+                </ng-container>
+                <ng-container *ngIf="expense.type === 'realtime'">
+                  <span class="realtime-amount">{{ formatAmount(expense.currentAmount) }} / {{ formatAmount(expense.goalAmount) }}</span>
+                  <ion-button fill="clear" size="small" class="add-transaction-btn" (click)="openAddTransaction(expense)">
+                    <ion-icon name="add" slot="icon-only"></ion-icon>
+                  </ion-button>
+                </ng-container>
+              </div>
+            </ion-item>
+            <ion-item-options side="end">
+              <ion-item-option color="danger" (click)="deleteExpense(expense)">Delete</ion-item-option>
+            </ion-item-options>
+          </ion-item-sliding>
+        </div>
+      </ion-card-content>
+    </ion-card>
   </div>
 
-  <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+  <div *ngIf="expenseGroups.length === 0" class="empty-state">
+    <div class="empty-state-card">
+      <ion-icon name="wallet-outline" class="empty-icon"></ion-icon>
+      <p class="empty-title">No expenses yet</p>
+      <p class="empty-subtitle">Tap the + button to add your first expense</p>
+    </div>
+  </div>
+
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end" class="sleek-fab">
     <ion-fab-button (click)="openAddExpense()">
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
