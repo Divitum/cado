@@ -47,7 +47,7 @@ export class TransactionService {
       .eq('user_id', userId)
       .single()
       .then((result: PostgrestSingleResponse<any>) => {
-        this._spendAmount.set(result.data?.spend_amount);
+        this._spendAmount.set(result.data?.spend_amount ?? 1000);
     })
   }
 
@@ -55,7 +55,7 @@ export class TransactionService {
     this.authorizationService.getLoggedInUserId()
       .then(id => {
         supabase.from('user_settings')
-          .update({ spend_amount: spendAmount })
+          .upsert({ user_id: id, spend_amount: spendAmount }, { onConflict: 'user_id'})
           .eq('user_id', id)
           .select()
           .single()
