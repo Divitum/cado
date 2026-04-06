@@ -19,7 +19,7 @@
       <div class="circle-chart"
            [style.background]="'conic-gradient(red 0% ' + percentageSpent() + '%, lightgreen ' + percentageSpent() +  '% 100%)'">
         <div class="circle-content">
-          <div class="amount-container">
+          <div class="amount-container" [style.width]="((spendAmount() - totalSpent()).toString().length + 2) + 'ch'">
             <span>R</span>
             <input type="number"
                    [value]="spendAmount() - totalSpent()"
