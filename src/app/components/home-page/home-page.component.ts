@@ -26,6 +26,15 @@ export default class HomePage implements OnInit {
     .reduce((acc, t) => acc + t.amount, 0);
   });
 
+  percentageSpent = computed<number>(() => {
+    if (this.totalSpent() > 0 && this.spendAmount() > 0) {
+      let spentPercentage = (this.totalSpent() / this.spendAmount()) * 100;
+      return Math.floor(spentPercentage);
+    } else {
+      return 0;
+    }
+  })
+
   isSpendModalOpen = signal(false);
   startOfWeek: string = "";
   endOfWeek: string = "";
@@ -33,6 +42,7 @@ export default class HomePage implements OnInit {
   username = signal<string>('');
 
   constructor() {
+    console.log("HOME PAGE CONSTRUCTED")
     this.transactionService.fetchTransactions();
     const now = new Date();
     const sunday = new Date(now);

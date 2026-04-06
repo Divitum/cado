@@ -16,7 +16,8 @@
     </div>
 
     <div class="circle-container">
-      <div class="circle-chart">
+      <div class="circle-chart"
+           [style.background]="'conic-gradient(red 0% ' + percentageSpent() + '%, lightgreen ' + percentageSpent() +  '% 100%)'">
         <div class="circle-content">
           <div class="amount-container">
             <span>R</span>
