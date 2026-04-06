@@ -1,0 +1,22 @@
+{
+  "name": "Cado",
+  "short_name": "Cado",
+  "display": "standalone",
+  "scope": "./",
+  "start_url": "/cado/",
+  "theme_color": "#317EFB",
+  "icons": [
+    {
+      "src": "icons/avocado-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "icons/avocado-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable any"
+    }
+  ]
+}
