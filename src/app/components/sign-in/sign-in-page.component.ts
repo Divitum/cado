@@ -13,6 +13,9 @@ export class SignInPage {
   googleSignIn() {
     supabase.auth.signInWithOAuth({
       provider: 'google',
+      options: {
+        redirectTo: 'https://www.divitum.github.io/cado'
+      }
     })
   }
 }
