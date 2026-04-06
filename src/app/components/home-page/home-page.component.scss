@@ -75,18 +75,20 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  //gap: 0;
   line-height: 0.9em;
   text-align: right;
   color: green;
   font-size: 1.6em;
+  width: 50%;
 
   input {
     border: none;
     margin: 0;
     color: green;
     font-size: 1em;
-    field-sizing: content;
+    background: white;
+    width: 100%;
+    min-width: 0;
   }
 
   input:hover {
