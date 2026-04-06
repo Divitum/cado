@@ -18,7 +18,7 @@ export default class HomePage implements OnInit {
   transactionService: TransactionService = inject(TransactionService);
   authorizationService: AuthorizationService = inject(AuthorizationService);
   transactions = this.transactionService.transactions;
-  spendAmount = this.transactionService.spendAmount;
+  spendAmount = this.transactionService.spendAmount || 1000;
   localSpendAmount: number = 0;
 
   totalSpent = computed<number>(() => {
