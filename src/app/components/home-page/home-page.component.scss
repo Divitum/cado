@@ -124,13 +124,40 @@
   left: 50%;
   transform: translate(-50%, -50%);
   background: white;
-  padding: 20px;
+  padding: 30px;
   border-radius: 8px;
   z-index: 10;
   color: black;
+  width: 60%;
+  max-width: 400px;
 
   span, input {
     color: black;
+    font-size: 0.8em;
+  }
+
+  input {
+    border: none;
+    margin: 0;
+    background: white;
+    width: 80%;
+  }
+
+  input:hover {
+    cursor: pointer;
+  }
+
+  /* Chrome, Safari, Edge, Opera */
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  /* Firefox */
+  input[type=number] {
+    -moz-appearance: textfield;
+    appearance: textfield;
   }
 }
 

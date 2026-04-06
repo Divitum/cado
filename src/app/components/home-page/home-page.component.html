@@ -27,7 +27,7 @@
               <div class="backdrop" (click)="closeAndSaveSpendAmount()"></div>
 
               <div class="spend-modal">
-                <h2>Update Spend Amount</h2>
+                <h3>Update Spend Amount</h3>
                 <div class="amount-container">
                   <span>R</span>
                   <input #spendInput type="number"
@@ -46,8 +46,8 @@
 
     <div class="transactions-container">
       <div class="transactions-heading">
-        <h2 class="ion-no-margin"> Transactions </h2>
-        <h3 class="ion-no-margin"> {{transactions().length}} total </h3>
+        <h2> Transactions </h2>
+        <h3> {{transactions().length}} total </h3>
       </div>
       <div class="scrollable-container">
         @for (transaction of transactions(); track transaction) {

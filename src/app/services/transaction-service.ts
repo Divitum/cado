@@ -39,7 +39,7 @@ export class TransactionService {
           amount: transaction.amount,
           date: new Date(transaction.creation_date)
         }
-      ));
+      )).filter((t: Transaction) => t.amount != null);
       this._transactions.set(transactionsArray.sort((a,b) => +b.date - +a.date));
     });
 
