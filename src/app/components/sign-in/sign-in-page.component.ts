@@ -12,8 +12,6 @@ import { environment } from "src/environments/environment";
 export class SignInPage {
 
   googleSignIn() {
-    debugger;
-    console.log('REDIRECT URL: ' + environment.redirectUrl);
     supabase.auth.signInWithOAuth({
       provider: 'google',
       options: {
