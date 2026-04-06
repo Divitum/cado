@@ -9,6 +9,10 @@
   overflow: hidden;
 }
 
+@media (max-width: 600px) {
+  .content { width: 100%; }
+}
+
 .heading {
   display: flex;
   flex-direction: column;
@@ -46,7 +50,7 @@
 
 .circle-chart {
   border-radius: 50%;
-  width: 150px;
+  width: 45%;
   height: 150px;
   background: conic-gradient(
     red 0% 20%,
