@@ -1,0 +1,12 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 1em;
+  border-style: solid;
+  border-color: lightgrey;
+
+  p {
+    margin: 0.5em;
+  }
+}

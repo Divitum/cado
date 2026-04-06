@@ -1,0 +1,65 @@
+<div>
+  <div class="content">
+
+    <div class="heading">
+      <div class="also-heading">
+        <h1> Expenses </h1>
+        <p>Hello, {{ username() }}</p>
+      </div>
+      <p> Track your spending </p>
+    </div>
+
+    <div class="paginator">
+      <button>‹</button>
+      <span>{{ this.startOfWeek }} - {{ this.endOfWeek }}</span>
+      <button>›</button>
+    </div>
+
+    <div class="circle-container">
+      <div class="circle-chart">
+        <div class="circle-content">
+          <div class="amount-container">
+            <span>R</span>
+            <input type="number"
+                   [value]="spendAmount() - totalSpent()"
+                   (click)="openSpendModal()">
+            @if (isSpendModalOpen()) {
+              <div class="backdrop" (click)="closeAndSaveSpendAmount()"></div>
+
+              <div class="spend-modal">
+                <h2>Update Spend Amount</h2>
+                <div class="amount-container">
+                  <span>R</span>
+                  <input #spendInput type="number"
+                         [placeholder]="999"
+                         (input)="onSpendInput(spendInput.value)">
+                </div>
+                <button (click)="closeAndSaveSpendAmount()">Save</button>
+              </div>
+            }
+          </div>
+          <p class="circle-small-text"> Available </p>
+          <p class="circle-small-text"> R{{ totalSpent().toFixed(2) }} spent </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="transactions-container">
+      <div class="transactions-heading">
+        <h2 class="ion-no-margin"> Transactions </h2>
+        <h3 class="ion-no-margin"> {{transactions().length}} total </h3>
+      </div>
+      <div class="scrollable-container">
+        @for (transaction of transactions(); track transaction) {
+          <app-transaction-card [transaction]="transaction" />
+        }
+      </div>
+    </div>
+
+    <div class="add-transactions">
+      <button (click)="openModal()"> + </button>
+    </div>
+
+  </div>
+  <app-modal #modal></app-modal>
+</div>

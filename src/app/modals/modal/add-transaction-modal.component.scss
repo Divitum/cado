@@ -1,0 +1,93 @@
+.container {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  font-family: 'Roboto';
+}
+
+.content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 22%;
+  border-radius: 1em;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 450;
+
+  button {
+    width: 1em;
+    height: 1em;
+    background-color: transparent;
+    color: black;
+  }
+}
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2em;
+  margin-bottom: 1.4em;
+
+  label {
+    font-weight: 450;
+  }
+}
+
+.input {
+  display: flex;
+  flex-direction: column;
+
+  input {
+    background-color: whitesmoke;
+    border-radius: 0.4em;
+    padding: 0.3em;
+    outline: none;
+    border-style: solid;
+    border-color: white;
+    border-width: 0.2em;
+  }
+
+  input:focus {
+    border-color: lightgrey;
+  }
+}
+
+.footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+
+  button {
+    padding: 1em;
+    width: 40%;
+    border-radius: 0.3em;
+    font-weight: 700;
+    font-size: 0.9em;
+  }
+}
+
+#add-button {
+  background: black;
+  color: white;
+}
+
+#cancel-button {
+  background: white;
+  color: black;
+}
