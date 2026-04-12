@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1775502151610,
+  "timestamp": 1775991035165,
   "index": "https://divitum.github.io/cado/index.html",
   "assetGroups": [
     {
@@ -12,11 +12,10 @@
       },
       "urls": [
         "https://divitum.github.io/cado/index.html",
-        "https://divitum.github.io/cado/main.1aefd106f20a2e28.js",
+        "https://divitum.github.io/cado/main-SAOELUNE.js",
         "https://divitum.github.io/cado/manifest.webmanifest",
-        "https://divitum.github.io/cado/polyfills.a49d40528dac2542.js",
-        "https://divitum.github.io/cado/runtime.5305af86176e5e0c.js",
-        "https://divitum.github.io/cado/styles.bb2df65d0d4beaa7.css"
+        "https://divitum.github.io/cado/polyfills-TDCRLYKL.js",
+        "https://divitum.github.io/cado/styles-O45FVQI2.css"
       ],
       "patterns": []
     },
@@ -1410,12 +1409,11 @@
     "https://divitum.github.io/cado/icons/avocado-192.png": "ae0c37206582f805e87f55c350b9c8777cadfcb0",
     "https://divitum.github.io/cado/icons/avocado-512.png": "31637fb5419342f080f00a2dae6041b43007f21b",
     "https://divitum.github.io/cado/icons/avocado.png": "e7a1ca63dcc34ca61180c424847993dd16cf4acc",
-    "https://divitum.github.io/cado/index.html": "bf1500a8e86229a11cd17131d252b5baba773f0f",
-    "https://divitum.github.io/cado/main.1aefd106f20a2e28.js": "845f52459283e4fabd5ff9d3d1500027daebdca9",
+    "https://divitum.github.io/cado/index.html": "cce880c3d578c55fe19936f2f6b10f647efca6ba",
+    "https://divitum.github.io/cado/main-SAOELUNE.js": "afdd86b57d08ff76336e4f7e6f330ae7a262b684",
     "https://divitum.github.io/cado/manifest.webmanifest": "6f6d8ccef24822545e80f1affa2f9f0560f44b6b",
-    "https://divitum.github.io/cado/polyfills.a49d40528dac2542.js": "0693988cfec0ed224c95caaba1bc62f0d3ab173f",
-    "https://divitum.github.io/cado/runtime.5305af86176e5e0c.js": "9607aea5bec452895316bd12174d1dd824dae65c",
-    "https://divitum.github.io/cado/styles.bb2df65d0d4beaa7.css": "8889dcccf02ded988399f88410f71d7c7390aad6",
+    "https://divitum.github.io/cado/polyfills-TDCRLYKL.js": "454f6db4230cc7ab61b24fe465dcc92bf041737d",
+    "https://divitum.github.io/cado/styles-O45FVQI2.css": "c609221d413f49eb386aae72a43e840c7b58e7fa",
     "https://divitum.github.io/cado/svg/accessibility-outline.svg": "92bc5fbc69bc5b55f75c5d29686d6f3b949857bd",
     "https://divitum.github.io/cado/svg/accessibility-sharp.svg": "0c6447c380f04b29bef7413d50d088dd4a5fd61c",
     "https://divitum.github.io/cado/svg/accessibility.svg": "3f760d7dc1da4008ef0d280effe8bfd30b6b68e9",
