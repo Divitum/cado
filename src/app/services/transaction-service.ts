@@ -37,7 +37,8 @@ export class TransactionService {
         {
           description: transaction.description,
           amount: transaction.amount,
-          date: new Date(transaction.creation_date)
+          date: new Date(transaction.creation_date),
+          category: transaction.category
         }
       )).filter((t: Transaction) => t.amount != null);
       this._transactions.set(transactionsArray.sort((a,b) => +b.date - +a.date));

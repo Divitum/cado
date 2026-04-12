@@ -5,13 +5,14 @@ import supabase from "../../services/supabase"
 import {TransactionService} from "../../services/transaction-service";
 import {TransactionCardComponent} from "../transaction-card/transaction-card.component";
 import {AuthorizationService} from "../../services/authorization.service";
+import {MatButton, MatFabButton} from "@angular/material/button";
 
 
 @Component({
   selector: 'app-home',
   templateUrl: 'home-page.component.html',
   styleUrls: ['home-page.component.scss'],
-  imports: [AddTransactionModalComponent, TransactionCardComponent]
+  imports: [AddTransactionModalComponent, TransactionCardComponent, MatFabButton, MatButton]
 })
 export default class HomePage implements OnInit {
   http = inject(HttpClient);

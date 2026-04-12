@@ -1,5 +1,12 @@
-<div class="card">
-  <p>{{ transaction.description }}</p>
-  <p>R{{ transaction.amount.toFixed(2) }}</p>
-  <p>{{ transaction.date.getDate() }} {{ months[transaction.date.getMonth()] }} {{ transaction.date.getFullYear() }}</p>
-</div>
+<mat-card class="card">
+  <div class="left">
+    <p id="head">{{ transaction.description }}</p>
+    <div class="sub">
+      <p>{{ transaction.category }}</p>
+      <p>{{ transaction.date.getDate() }} {{ months[transaction.date.getMonth()] }} {{ transaction.date.getFullYear() }}</p>
+    </div>
+  </div>
+  <div class="right">
+    <p>- R{{ transaction.amount.toFixed(2) }}</p>
+  </div>
+</mat-card>

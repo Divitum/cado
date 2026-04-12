@@ -1,9 +1,12 @@
 import {Component, Input} from '@angular/core';
 import Transaction from "../../models/transaction";
+import {MatCard} from "@angular/material/card";
 
 @Component({
   selector: 'app-transaction-card',
-  imports: [],
+  imports: [
+    MatCard
+  ],
   templateUrl: './transaction-card.component.html',
   styleUrl: './transaction-card.component.css',
 })

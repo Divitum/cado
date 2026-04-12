@@ -6,7 +6,7 @@
   height: 100vh;
   font-family: 'Roboto';
   overflow: hidden;
-  background: #1E1E1E;
+  //background: #1E1E1E;
   padding-left: 37.5%;
   padding-right: 37.5%;
 }
@@ -19,8 +19,9 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  justify-content: center;
 
-  > h1 {
+  h1 {
     margin: 0;
   }
 }
@@ -30,7 +31,7 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  gap: 5em;
+  width: 100%;
 }
 
 .sub-heading {
@@ -42,34 +43,33 @@
   display: flex;
   flex-direction: row;
   justify-content:space-between;
+
+  button {
+    font-size: 2em;
+    height: 1em;
+    width: 1em;
+  }
 }
 
 .circle-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+  position: relative;
+  width: 100%;
 
-.circle-chart {
-  border-radius: 50%;
-  width: 45%;
-  height: 150px;
-  //background: conic-gradient(
-  //  red 0% 20%,
-  //  lightgreen 20% 100%
-  //);
-  padding: 10px;
+  svg {
+    display: block;
+    width: 100%;
+    max-width: 50%;
+    margin: auto;
+  }
 }
 
 .circle-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background: white;
-  border-radius: 50%;
-  height: 100%;
-  gap: 0.5em;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.2em;
+  text-align: center;
 }
 
 @media (max-width: 600px) {
@@ -83,16 +83,16 @@
   align-items: center;
   line-height: 0.9em;
   text-align: center;
-  color: green;
-  font-size: 1.6em;
+  color: #1ABC9C;
+  font-size: 2.1em;
   width: 60%;
 
   input {
     border: none;
     margin: 0;
-    color: green;
+    color: #1ABC9C;
     font-size: 1em;
-    background: white;
+    background-color: var(--mat-sys-surface);
     width: 100%;
     min-width: 0;
   }
@@ -173,10 +173,6 @@
   color: grey;
 }
 
-.transactions-container {
-  height: 40%;
-}
-
 .transactions-heading {
   display: flex;
   flex-direction: row;
@@ -185,10 +181,10 @@
 
 .scrollable-container {
   overflow-y: auto;
-  height: 100%;
+  height: 52.5%;
   display: flex;
   flex-direction: column;
-  gap: 1em;
+  gap: 0.6em;
 
   &::-webkit-scrollbar {
     display: none;
@@ -200,14 +196,10 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  height: 100%;
+  margin-top: 2%;
 
   button {
-    border-color: black;
     border-radius: 50%;
     font-size: 2em;
-    height: 1.5em;
-    width: 1.5em;
-    background-color: lightblue;
   }
 }

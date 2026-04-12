@@ -10,38 +10,41 @@
     </div>
 
     <div class="paginator">
-      <button>‹</button>
+      <button matButton>‹</button>
       <span>{{ this.startOfWeek }} - {{ this.endOfWeek }}</span>
-      <button>›</button>
+      <button matButton>›</button>
     </div>
 
     <div class="circle-container">
-      <div class="circle-chart"
-           [style.background]="'conic-gradient(red 0% ' + percentageSpent() + '%, lightgreen ' + percentageSpent() +  '% 100%)'">
-        <div class="circle-content">
-          <div class="amount-container" [style.width]="((spendAmount() - totalSpent()).toString().length + 2) + 'ch'">
-            <span>R</span>
-            <input type="number"
-                   [value]="spendAmount() - totalSpent()"
-                   (click)="openSpendModal()">
-            @if (isSpendModalOpen()) {
-              <div class="backdrop" (click)="closeAndSaveSpendAmount()"></div>
+      <svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet">
+        <circle r="47" cx="50" cy="50" stroke-width="0.4em" fill="none" stroke="#FF6B6B"/>
+        <circle r="47" cx="50" cy="50" stroke-width="0.4em" fill="none" stroke="#145A4A"
+                stroke-dasharray="200" stroke-dashoffset="100" stroke-linecap="round"
+                transform="rotate(-90 50 50)"/>
+      </svg>
+      <div class="circle-content">
+        <div class="amount-container" [style.width]="((spendAmount() - totalSpent()).toString().length + 2) + 'ch'">
+          <span>R</span>
+          <input type="number"
+                 [value]="spendAmount() - totalSpent()"
+                 (click)="openSpendModal()">
+          @if (isSpendModalOpen()) {
+            <div class="backdrop" (click)="closeAndSaveSpendAmount()"></div>
 
-              <div class="spend-modal">
-                <h3>Update Spend Amount</h3>
-                <div class="amount-container">
-                  <span>R</span>
-                  <input #spendInput type="number"
-                         [placeholder]="999"
-                         (input)="onSpendInput(spendInput.value)">
-                </div>
-                <button (click)="closeAndSaveSpendAmount()">Save</button>
+            <div class="spend-modal">
+              <h3>Update Spend Amount</h3>
+              <div class="amount-container">
+                <span>R</span>
+                <input #spendInput type="number"
+                       [placeholder]="999"
+                       (input)="onSpendInput(spendInput.value)">
               </div>
-            }
-          </div>
-          <p class="circle-small-text"> Available </p>
-          <p class="circle-small-text"> R{{ totalSpent().toFixed(2) }} spent </p>
+              <button (click)="closeAndSaveSpendAmount()">Save</button>
+            </div>
+          }
         </div>
+        <p class="circle-small-text" [style.color]="'white'"> Available </p>
+        <p class="circle-small-text"> R{{ totalSpent().toFixed(2) }} spent </p>
       </div>
     </div>
 
@@ -55,10 +58,9 @@
           <app-transaction-card [transaction]="transaction" />
         }
       </div>
-    </div>
-
-    <div class="add-transactions">
-      <button (click)="openModal()"> + </button>
+      <div class="add-transactions">
+        <button mat-fab (click)="openModal()"> + </button>
+      </div>
     </div>
 
   </div>

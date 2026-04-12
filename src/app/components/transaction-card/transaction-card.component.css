@@ -1,12 +1,28 @@
 .card {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  border-radius: 1em;
-  border-style: solid;
-  border-color: lightgrey;
+  justify-content: space-between;
+  padding-left: 2em;
+  padding-right: 2em;
+  padding-top: 0.7em;
+  padding-bottom: 0.7em;
 
   p {
-    margin: 0.5em;
+    margin: 0.3em;
   }
+}
+
+#head {
+  font-size: 1.2em;
+}
+
+.sub {
+  color: grey;
+  font-size: 0.9em;
+}
+
+.right {
+  color: #FF6B6B;
+  font-size: 1.3em;
 }
