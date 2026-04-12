@@ -6,13 +6,14 @@ import {TransactionService} from "../../services/transaction-service";
 import {TransactionCardComponent} from "../transaction-card/transaction-card.component";
 import {AuthorizationService} from "../../services/authorization.service";
 import {MatButton, MatFabButton} from "@angular/material/button";
+import {MatCard} from "@angular/material/card";
 
 
 @Component({
   selector: 'app-home',
   templateUrl: 'home-page.component.html',
   styleUrls: ['home-page.component.scss'],
-  imports: [AddTransactionModalComponent, TransactionCardComponent, MatFabButton, MatButton]
+  imports: [AddTransactionModalComponent, TransactionCardComponent, MatFabButton, MatButton, MatCard]
 })
 export default class HomePage implements OnInit {
   http = inject(HttpClient);

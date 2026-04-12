@@ -3,13 +3,15 @@ import supabase from "../../services/supabase";
 import {TransactionService} from "../../services/transaction-service";
 import {FormsModule} from "@angular/forms";
 import {AuthorizationService} from "../../services/authorization.service";
+import {MatCard} from "@angular/material/card";
 
 @Component({
   selector: 'app-modal',
   templateUrl: './add-transaction-modal.component.html',
   styleUrls: ['./add-transaction-modal.component.scss'],
   imports: [
-    FormsModule
+    FormsModule,
+    MatCard
   ]
 })
 export class AddTransactionModalComponent {

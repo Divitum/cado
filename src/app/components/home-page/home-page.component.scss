@@ -128,12 +128,10 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: white;
   padding: 30px;
   border-radius: 8px;
   z-index: 10;
-  color: black;
-  width: 60%;
+  width: 10em;
   max-width: 400px;
 
   span, input {
@@ -144,7 +142,6 @@
   input {
     border: none;
     margin: 0;
-    background: white;
     width: 80%;
   }
 
@@ -180,7 +177,7 @@
 
 .scrollable-container {
   overflow-y: auto;
-  height: 52.5%;
+  height: 37.5%;
   display: flex;
   flex-direction: column;
   gap: 0.6em;

@@ -18,8 +18,8 @@
     <div class="circle-container">
       <svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet">
         <circle r="47" cx="50" cy="50" stroke-width="0.4em" fill="none" stroke="#FF6B6B"/>
-        <circle r="47" cx="50" cy="50" stroke-width="0.4em" fill="none" stroke="#145A4A"
-                stroke-dasharray="295" [attr.stroke-dashoffset]="295 * (1 - percentageSpent() / 100)" stroke-linecap="round"
+        <circle r="47" cx="50" cy="50" stroke-width="0.45em" fill="none" stroke="#145A4A"
+                stroke-dasharray="295" [attr.stroke-dashoffset]="295 * (percentageSpent() / 100)" stroke-linecap="round"
                 transform="rotate(-90 50 50)"/>
       </svg>
       <div class="circle-content">
@@ -31,7 +31,7 @@
           @if (isSpendModalOpen()) {
             <div class="backdrop" (click)="closeAndSaveSpendAmount()"></div>
 
-            <div class="spend-modal">
+            <mat-card class="spend-modal">
               <h3>Update Spend Amount</h3>
               <div class="amount-container">
                 <span>R</span>
@@ -40,7 +40,7 @@
                        (input)="onSpendInput(spendInput.value)">
               </div>
               <button (click)="closeAndSaveSpendAmount()">Save</button>
-            </div>
+            </mat-card>
           }
         </div>
         <p class="circle-small-text" [style.color]="'white'"> Available </p>

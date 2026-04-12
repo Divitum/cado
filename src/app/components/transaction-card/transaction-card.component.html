@@ -3,7 +3,12 @@
     <p id="head">{{ transaction.description }}</p>
     <div class="sub">
       <p>{{ transaction.category }}</p>
-      <p>{{ transaction.date.getDate() }} {{ months[transaction.date.getMonth()] }} {{ transaction.date.getFullYear() }}</p>
+      <p>
+        {{ transaction.date.getDate() }}
+        {{ months[transaction.date.getMonth()] }}
+        {{ transaction.date.getFullYear() }},
+        {{ transaction.date.toLocaleTimeString('en-GB', {hour: '2-digit', minute: '2-digit', hour12: false}) }}
+      </p>
     </div>
   </div>
   <div class="right">

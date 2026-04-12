@@ -149,7 +149,7 @@
         "deploy": {
           "builder": "angular-cli-ghpages:deploy",
           "options": {
-            "baseHref": "https://divitum.github.io/cado/",
+            "baseHref": "/cado/",
             "dir": "dist"
           },
           "configurations": {
