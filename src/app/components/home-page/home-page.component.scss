@@ -91,7 +91,7 @@
     color: #1ABC9C;
     font-size: 1em;
     background-color: var(--mat-sys-surface);
-    width: 100%;
+    width: auto;
     min-width: 0;
   }
 
@@ -115,7 +115,7 @@
 
 @media (max-width: 600px) {
   .amount-container {
-    width: 80%;
+    width: 90%;
     font-size: 1.6em;
   }
 

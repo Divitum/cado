@@ -24,10 +24,7 @@
       </svg>
       <div class="circle-content">
         <div class="amount-container" [style.width]="((spendAmount() - totalSpent()).toString().length + 2) + 'ch'">
-          <span>R</span>
-          <input type="number"
-                 [value]="spendAmount() - totalSpent()"
-                 (click)="openSpendModal()">
+          <div (click)="openSpendModal()"> R{{ spendAmount() - totalSpent() }} </div>
         </div>
         <p class="circle-small-text" [style.color]="'white'"> Available </p>
         <p class="circle-small-text"> R{{ totalSpent().toFixed(2) }} spent </p>
