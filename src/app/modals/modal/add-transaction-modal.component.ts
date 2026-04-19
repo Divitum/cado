@@ -14,8 +14,7 @@ import {MatInput} from "@angular/material/input";
   imports: [
     FormsModule,
     MatCard,
-    MatButton,
-    MatInput
+    MatButton
   ]
 })
 export class AddTransactionModalComponent {

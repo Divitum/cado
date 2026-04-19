@@ -74,13 +74,6 @@
   text-align: center;
 }
 
-@media (max-width: 600px) {
-  .amount-container {
-    width: 80%;
-    font-size: 1.6em;
-  }
-}
-
 .amount-container {
   display: flex;
   flex-direction: row;
@@ -117,6 +110,17 @@
   input[type=number] {
     -moz-appearance: textfield;
     appearance: textfield;
+  }
+}
+
+@media (max-width: 600px) {
+  .amount-container {
+    width: 80%;
+    font-size: 1.6em;
+  }
+
+  .amount-container input span {
+    font-size: 1.6rem;
   }
 }
 
