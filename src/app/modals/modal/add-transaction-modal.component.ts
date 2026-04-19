@@ -4,6 +4,8 @@ import {TransactionService} from "../../services/transaction-service";
 import {FormsModule} from "@angular/forms";
 import {AuthorizationService} from "../../services/authorization.service";
 import {MatCard} from "@angular/material/card";
+import {MatButton} from "@angular/material/button";
+import {MatInput} from "@angular/material/input";
 
 @Component({
   selector: 'app-modal',
@@ -11,7 +13,9 @@ import {MatCard} from "@angular/material/card";
   styleUrls: ['./add-transaction-modal.component.scss'],
   imports: [
     FormsModule,
-    MatCard
+    MatCard,
+    MatButton,
+    MatInput
   ]
 })
 export class AddTransactionModalComponent {

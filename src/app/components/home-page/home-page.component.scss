@@ -1,9 +1,10 @@
 .content {
   display: flex;
   flex-direction: column;
-  gap: 2%;
+  gap: 1%;
   margin: 0 auto;
   height: 100vh;
+  max-height: 100vh;
   font-family: 'Roboto';
   overflow: hidden;
   padding-left: 37.5%;
@@ -11,7 +12,9 @@
 }
 
 @media (max-width: 600px) {
-  .content { padding: 0; }
+  .content {
+    padding: 3%;
+  }
 }
 
 .heading {
@@ -72,7 +75,10 @@
 }
 
 @media (max-width: 600px) {
-  .amount-container { width: 80%; }
+  .amount-container {
+    width: 80%;
+    font-size: 1.6em;
+  }
 }
 
 .amount-container {
@@ -184,6 +190,12 @@
 
   &::-webkit-scrollbar {
     display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .scrollable-container {
+    height: 32.5%;
   }
 }
 

@@ -7,21 +7,23 @@ import {TransactionCardComponent} from "../transaction-card/transaction-card.com
 import {AuthorizationService} from "../../services/authorization.service";
 import {MatButton, MatFabButton} from "@angular/material/button";
 import {MatCard} from "@angular/material/card";
+import {SpendModalComponent} from "./spend-modal/spend-modal.component";
+import {MatDialog} from "@angular/material/dialog";
 
 
 @Component({
   selector: 'app-home',
   templateUrl: 'home-page.component.html',
   styleUrls: ['home-page.component.scss'],
-  imports: [AddTransactionModalComponent, TransactionCardComponent, MatFabButton, MatButton, MatCard]
+  imports: [AddTransactionModalComponent, TransactionCardComponent, MatFabButton, MatButton, MatCard, SpendModalComponent]
 })
 export default class HomePage implements OnInit {
   http = inject(HttpClient);
   transactionService: TransactionService = inject(TransactionService);
   authorizationService: AuthorizationService = inject(AuthorizationService);
+  readonly spendModal = inject(MatDialog);
   transactions = this.transactionService.transactions;
-  spendAmount = this.transactionService.spendAmount;
-  localSpendAmount: number = 0;
+  readonly spendAmount = this.transactionService.spendAmount;
 
   totalSpent = computed<number>(() => {
     return this.transactionService.transactions()
@@ -37,7 +39,6 @@ export default class HomePage implements OnInit {
     }
   })
 
-  isSpendModalOpen = signal(false);
   startOfWeek: string = "";
   endOfWeek: string = "";
   months: string[] = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'September', 'October', 'November', 'December'];
@@ -70,24 +71,11 @@ export default class HomePage implements OnInit {
   }
   protected readonly open = open;
 
-  updateSpendAmount() {
-    if (this.localSpendAmount > 0 && this.localSpendAmount !== this.spendAmount()) {
-      this.transactionService.updateSpendAmount(this.localSpendAmount);
-      this.localSpendAmount = 0;
-    }
-  }
-
-  onSpendInput(spendAmount: string) {
-    this.localSpendAmount = parseInt(spendAmount);
-  }
-
   openSpendModal() {
-    this.isSpendModalOpen.set(true);
-  }
-
-  closeAndSaveSpendAmount() {
-    this.updateSpendAmount();
-    this.isSpendModalOpen.set(false);
+    this.spendModal.open(SpendModalComponent, {
+      disableClose: false,
+      hasBackdrop: true
+    });
   }
 
   async getLoggedInUserName() {
