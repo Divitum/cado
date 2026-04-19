@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1776610827139,
+  "timestamp": 1776611397798,
   "index": "https://divitum.github.io/cado/index.html",
   "assetGroups": [
     {
@@ -12,7 +12,7 @@
       },
       "urls": [
         "https://divitum.github.io/cado/index.html",
-        "https://divitum.github.io/cado/main-KEP3NNMH.js",
+        "https://divitum.github.io/cado/main-VNAZF44I.js",
         "https://divitum.github.io/cado/manifest.webmanifest",
         "https://divitum.github.io/cado/polyfills-TDCRLYKL.js",
         "https://divitum.github.io/cado/styles-O45FVQI2.css"
@@ -1409,8 +1409,8 @@
     "https://divitum.github.io/cado/icons/avocado-192.png": "ae0c37206582f805e87f55c350b9c8777cadfcb0",
     "https://divitum.github.io/cado/icons/avocado-512.png": "31637fb5419342f080f00a2dae6041b43007f21b",
     "https://divitum.github.io/cado/icons/avocado.png": "e7a1ca63dcc34ca61180c424847993dd16cf4acc",
-    "https://divitum.github.io/cado/index.html": "08189c5b9ec7d0fdb5018a96e1eef8fdea68ba49",
-    "https://divitum.github.io/cado/main-KEP3NNMH.js": "1ae7b636feafb65b5f780f5e6261755512662079",
+    "https://divitum.github.io/cado/index.html": "b36bb7df954a53f1bb3a19aea555e88c81c03a2b",
+    "https://divitum.github.io/cado/main-VNAZF44I.js": "f97c383431e3efe4cbbcb742d9e3472180a9929c",
     "https://divitum.github.io/cado/manifest.webmanifest": "6f6d8ccef24822545e80f1affa2f9f0560f44b6b",
     "https://divitum.github.io/cado/polyfills-TDCRLYKL.js": "454f6db4230cc7ab61b24fe465dcc92bf041737d",
     "https://divitum.github.io/cado/styles-O45FVQI2.css": "c609221d413f49eb386aae72a43e840c7b58e7fa",
