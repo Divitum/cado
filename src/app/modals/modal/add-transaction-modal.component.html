@@ -3,7 +3,7 @@
     <div class="content">
       <div class="header">
         <p> Add Transaction </p>
-        <button (click)="close()"> &#10006; </button>
+        <button matButton (click)="close()"> &#10006; </button>
       </div>
 
       <div class="inputs">
@@ -24,8 +24,8 @@
       </div>
 
       <div class="footer">
-        <button id="cancel-button" (click)="close()">Cancel</button>
-        <button id="add-button" (click)="saveTransaction()">Add</button>
+        <button matButton id="cancel-button" (click)="close()">Cancel</button>
+        <button matButton id="add-button" (click)="saveTransaction()">Add</button>
       </div>
     </div>
   </mat-card>

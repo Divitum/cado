@@ -28,20 +28,6 @@
           <input type="number"
                  [value]="spendAmount() - totalSpent()"
                  (click)="openSpendModal()">
-          @if (isSpendModalOpen()) {
-            <div class="backdrop" (click)="closeAndSaveSpendAmount()"></div>
-
-            <mat-card class="spend-modal">
-              <h3>Update Spend Amount</h3>
-              <div class="amount-container">
-                <span>R</span>
-                <input #spendInput type="number"
-                       [placeholder]="999"
-                       (input)="onSpendInput(spendInput.value)">
-              </div>
-              <button (click)="closeAndSaveSpendAmount()">Save</button>
-            </mat-card>
-          }
         </div>
         <p class="circle-small-text" [style.color]="'white'"> Available </p>
         <p class="circle-small-text"> R{{ totalSpent().toFixed(2) }} spent </p>

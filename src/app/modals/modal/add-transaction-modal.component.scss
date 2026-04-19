@@ -55,13 +55,13 @@
     border-radius: 0.4em;
     padding: 0.3em;
     outline: none;
-    border-style: solid;
-    border-color: white;
-    border-width: 0.2em;
+    //border-style: solid;
+    //border-color: white;
+    //border-width: 0.2em;
   }
 
   input:focus {
-    border-color: lightgrey;
+    //border-color: lightgrey;
   }
 }
 
@@ -81,12 +81,12 @@
   }
 }
 
-#add-button {
-  background: black;
-  color: white;
-}
-
-#cancel-button {
-  background: white;
-  color: black;
-}
+//#add-button {
+//  background: black;
+//  color: white;
+//}
+//
+//#cancel-button {
+//  background: white;
+//  color: black;
+//}
